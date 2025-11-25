@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MRSA POT Explorer (Tabs)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <h1>MRSA POT Explorer</h1>
+        <p class="subtitle">
+          CSVを読み込んで、POT動態・プロファイル・アウトブレイク芽をタブで解析
+        </p>
+      </div>
+      <nav class="tabs" id="tabs">
+        <button class="tab active" data-tab="upload">Upload / Settings</button>
+        <button class="tab" data-tab="overview">Overview</button>
+        <button class="tab" data-tab="trend">POT Trend</button>
+        <button class="tab" data-tab="profile">POT Profile</button>
+        <button class="tab" data-tab="signals">Signals</button>
+        <button class="tab" data-tab="raw">Raw Table</button>
+      </nav>
+    </header>
+    <main class="container">
+      <!-- Upload / Settings -->
+      <section class="tabpage active" id="tab-upload">
+        <div class="card">
+          <h2>1) CSV読み込み</h2>
+          <div class="row">
+            <input type="file" id="csvFile" accept=".csv" />
+            <button id="loadSampleBtn" class="btn ghost">
+              サンプルCSVを読む
+            </button>
+          </div>
+          <div id="colCheck" class="notice"></div>
+        </div>
+        <div class="card">
+          <h2>2) 共通フィルタ（全タブに反映）</h2>
+          <div class="row filter">
+            <label>期間</label>
+            <input type="date" id="startDate" />
+            <span>〜</span>
+            <input type="date" id="endDate" />
+            <label class="ml">病棟</label>
+            <select id="wardFilter">
+              <option value="ALL">ALL</option>
+            </select>
+            <label class="ml">施設</label>
+            <select id="hospitalFilter">
+              <option value="ALL">ALL</option>
+            </select>
+            <button id="applyBtn" class="btn">解析を更新</button>
+          </div>
+          <details class="help" open>
+            <summary>解析の前提と欠損の扱い（クリックで開閉）</summary>
+            <ul>
+              <li>
+                必須列：collection_date / ward / POT1-3 / hospital / specimen。
+              </li>
+              <li>欠損は空欄または NA でOK。カテゴリ欠損は unknown 扱い。</li>
+              <li>日付欠損の行は時系列解析から自動除外されます。</li>
+            </ul>
+          </details>
+        </div>
+      </section>
+      <!-- Overview -->
+      <section class="tabpage" id="tab-overview">
+        <div class="card">
+          <h2>Overview Dashboard</h2>
+          <div id="stats" class="stats"></div>
+          <div class="grid2">
+            <div class="panel">
+              <h3>病棟別分離数</h3>
+              <canvas id="wardBar" width="460" height="280"></canvas>
+              <p class="mini">院内分布の偏り（定着/局在の示唆）を見る。</p>
+            </div>
+            <div class="panel">
+              <h3>検体別割合</h3>
+              <canvas id="specimenPie" width="460" height="280"></canvas>
+              <p class="mini">検体の偏りはPOTの“顔”に直結する。</p>
+            </div>
+            <div class="panel full">
+              <h3>月別総件数</h3>
+              <canvas id="totalLine" width="940" height="300"></canvas>
+              <p class="mini">全体の増減と季節性の把握。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Trend -->
+      <section class="tabpage" id="tab-trend">
+        <div class="card">
+          <h2>POT Trend</h2>
+          <p class="desc">
+            上位POTの月別推移を表示。ピークはアウトブレイク芽検知の前兆になり得る。
+          </p>
+          <canvas id="potTrendCanvas" width="980" height="340"></canvas>
+          <p class="mini">※上位5 POTの推移（固定色）。</p>
+        </div>
+      </section>
+      <!-- Profile -->
+      <section class="tabpage" id="tab-profile">
+        <div class="card">
+          <h2>POT Profile（POTに“顔”をつける）</h2>
+          <p class="desc">
+            病棟・検体・耐性・onsetをまとめてPOTの特徴を可視化。
+            似た分布のPOTは“準アウトブレイク”候補。
+          </p>
+          <div class="panel full">
+            <h3>POT × 病棟ヒートマップ</h3>
+            <canvas id="potWardHeatmap" width="940" height="360"></canvas>
+            <p class="mini">濃いマスほど、その病棟でそのPOTが多い。</p>
+          </div>
+          <div id="potCards" class="grid"></div>
+        </div>
+      </section>
+      <!-- Signals -->
+      <section class="tabpage" id="tab-signals">
+        <div class="card">
+          <h2>Outbreak Signals</h2>
+          <p class="desc">
+            同一POTが同一病棟で短期間に集中した“芽”を自動抽出。
+            フィルタ後のデータでスキャンします。
+          </p>
+          <div class="row filter">
+            <label>窓幅（日）</label>
+            <input type="number" id="windowDays" value="14" min="3" max="60" />
+            <label class="ml">閾値（件）</label>
+            <input type="number" id="thresholdK" value="3" min="2" max="10" />
+            <button id="scanBtn" class="btn">スキャン</button>
+          </div>
+          <div class="panel full">
+            <h3>シグナル・タイムライン</h3>
+            <canvas id="signalTimeline" width="940" height="220"></canvas>
+            <p class="mini">期間が重なる・連鎖する場合、伝播動線の可能性。</p>
+          </div>
+          <div id="signals"></div>
+        </div>
+      </section>
+      <!-- Raw -->
+      <section class="tabpage" id="tab-raw">
+        <div class="card">
+          <h2>Raw Table</h2>
+          <div class="row filter">
+            <label>検索（POT / 病棟 / 検体 / 患者ID）</label>
+            <input
+              type="text"
+              id="searchBox"
+              placeholder="例: ICU / 106-77-113 / blood / P012"
+            />
+          </div>
+          <div class="table-wrap">
+            <table id="rawTable"></table>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">MRSA POT Explorer (Tabbed) v0.2</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
