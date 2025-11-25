@@ -1,0 +1,101 @@
+﻿isolate_id,collection_date,test_date,hospital,ward,patient_id,age,sex,specimen,infection_or_colonization,POT1,POT2,POT3,oxacillin_MIC,vancomycin_MIC,linezolid_MIC,daptomycin_MIC,clindamycin_R,erm_gene,onset_type,device,outcome_30d,previous_MRSA_history
+MRSA_0001,2025-06-15,2025-06-20,City General,Surgery,P035,98,M,sputum,infection,93,190,42,4,1.0,1.0,0.25,0,0,hospital-onset,none,unknown,0
+MRSA_0002,2025-10-26,2025-10-26,City General,Internal,P015,59,M,wound,infection,88,12,7,64,1.5,0.5,0.5,1,1,hospital-onset,CVC,alive,0
+MRSA_0003,2025-10-16,2025-10-20,OMU Hospital,ICU,P028,68,F,wound,colonization,93,190,42,8,0.5,0.5,0.5,0,0,hospital-onset,none,alive,0
+MRSA_0004,2025-02-07,2025-02-09,OMU Hospital,Surgery,P010,75,F,wound,colonization,88,12,7,16,1.0,0.5,0.5,1,1,hospital-onset,CVC,alive,1
+MRSA_0005,2025-08-31,2025-09-03,Nagasaki Univ Hosp,ICU,P020,53,F,sputum,infection,106,77,113,8,1.0,1.0,0.5,0,0,community-onset,none,alive,0
+MRSA_0006,2025-07-20,2025-07-25,City General,Internal,P026,68,F,catheter,colonization,88,12,7,16,1.0,0.5,0.5,0,0,community-onset,none,alive,0
+MRSA_0007,2025-04-30,2025-05-05,OMU Hospital,ER,P019,67,M,blood,infection,12,34,56,64,2.0,1.0,1.0,0,0,hospital-onset,none,dead,0
+MRSA_0008,2025-10-14,2025-10-15,OMU Hospital,Surgery,P041,36,F,blood,infection,93,190,42,4,1.0,1.0,0.5,1,1,hospital-onset,none,alive,0
+MRSA_0009,2025-07-12,2025-07-16,OMU Hospital,Surgery,P024,86,F,blood,colonization,93,190,42,4,1.0,1.0,1.0,0,0,unknown,CVC,alive,0
+MRSA_0010,2025-01-12,2025-01-14,OMU Hospital,LTC,P045,78,M,urine,infection,210,5,9,64,1.0,0.5,1.0,0,0,hospital-onset,none,alive,1
+MRSA_0011,2025-04-25,2025-04-27,Nagasaki Univ Hosp,ER,P013,56,M,urine,colonization,93,190,42,4,2.0,1.0,0.5,0,0,hospital-onset,CVC,alive,0
+MRSA_0012,2025-08-17,2025-08-20,Nagasaki Univ Hosp,Internal,P024,64,M,sputum,infection,88,12,7,64,1.5,1.0,0.5,1,1,hospital-onset,none,alive,0
+MRSA_0013,2025-04-13,2025-04-17,OMU Hospital,ICU,P022,77,M,urine,colonization,155,66,101,8,1.0,0.5,0.25,1,0,hospital-onset,none,alive,1
+MRSA_0014,2025-08-31,2025-09-04,Nagasaki Univ Hosp,Surgery,P009,63,M,blood,colonization,93,190,42,32,2.0,0.5,1.0,0,0,hospital-onset,CVC,alive,1
+MRSA_0015,2025-05-04,2025-05-07,Nagasaki Univ Hosp,Surgery,P009,63,M,catheter,infection,93,190,42,32,1.5,1.0,0.25,0,0,hospital-onset,CVC,alive,1
+MRSA_0016,2025-04-04,2025-04-04,Nagasaki Univ Hosp,ER,P010,41,F,wound,infection,12,34,56,32,1.5,0.5,0.5,0,0,hospital-onset,ETT,alive,0
+MRSA_0017,2025-09-17,2025-09-19,OMU Hospital,ICU,P005,77,F,sputum,colonization,88,12,7,64,1.0,1.0,1.0,1,0,hospital-onset,none,unknown,0
+MRSA_0018,2025-10-14,2025-10-15,City General,ICU,P027,70,M,sputum,infection,88,12,7,16,1.5,1.0,0.25,1,1,community-onset,none,alive,0
+MRSA_0019,2025-08-28,2025-08-31,OMU Hospital,LTC,P032,72,M,catheter,colonization,210,5,9,16,1.0,0.5,0.25,0,0,hospital-onset,none,alive,0
+MRSA_0020,2025-08-14,2025-08-19,Nagasaki Univ Hosp,Surgery,P019,40,M,blood,colonization,93,190,42,16,0.5,1.0,0.5,0,0,hospital-onset,urinary,alive,0
+MRSA_0021,2025-05-13,2025-05-16,OMU Hospital,Internal,P032,97,F,blood,infection,88,12,7,4,1.0,1.0,0.25,1,1,community-onset,none,dead,0
+MRSA_0022,2025-01-06,2025-01-07,OMU Hospital,Internal,P018,70,M,blood,colonization,71,71,71,8,1.0,0.5,0.5,1,1,unknown,Dialysis,alive,0
+MRSA_0023,2025-05-19,2025-05-23,OMU Hospital,ICU,P001,61,M,urine,infection,106,77,113,4,1.0,1.0,0.5,0,0,hospital-onset,CVC,dead,1
+MRSA_0024,2025-06-07,2025-06-09,Nagasaki Univ Hosp,LTC,P041,98,M,wound,infection,210,5,9,16,1.0,0.5,0.5,0,0,hospital-onset,none,alive,0
+MRSA_0025,2025-05-05,2025-05-08,Nagasaki Univ Hosp,ICU,P018,67,F,blood,infection,106,77,113,4,2.0,0.5,0.5,0,0,hospital-onset,Dialysis,alive,0
+MRSA_0026,2025-05-23,2025-05-27,OMU Hospital,ICU,P001,41,M,sputum,infection,106,77,113,16,1.0,0.5,2.0,1,1,hospital-onset,none,dead,0
+MRSA_0027,2025-07-19,2025-07-23,Nagasaki Univ Hosp,Internal,P019,60,M,blood,colonization,88,12,7,64,1.0,1.0,0.5,1,0,community-onset,CVC,alive,1
+MRSA_0028,2025-04-28,2025-05-02,OMU Hospital,ICU,P007,26,F,urine,infection,106,77,113,32,1.0,1.0,0.25,1,0,hospital-onset,CVC,alive,0
+MRSA_0029,2025-02-03,2025-02-04,Nagasaki Univ Hosp,Internal,P017,86,M,urine,infection,93,190,42,32,0.5,2.0,0.5,0,0,community-onset,Dialysis,alive,0
+MRSA_0030,2025-02-09,2025-02-12,OMU Hospital,Surgery,P045,60,F,wound,infection,88,12,7,4,1.0,1.0,0.5,0,0,hospital-onset,CVC,alive,1
+MRSA_0031,2025-03-02,2025-03-07,City General,Internal,P006,54,F,blood,infection,88,12,7,16,1.0,2.0,1.0,0,0,community-onset,Dialysis,alive,0
+MRSA_0032,2025-09-26,2025-09-29,OMU Hospital,Surgery,P041,87,F,catheter,colonization,88,12,7,4,1.0,2.0,0.5,0,0,hospital-onset,urinary,alive,0
+MRSA_0033,2025-06-26,2025-06-28,OMU Hospital,ICU,P021,38,F,urine,infection,88,12,7,16,1.0,0.5,0.5,1,1,unknown,ETT,dead,1
+MRSA_0034,2025-01-25,2025-01-30,OMU Hospital,ICU,P041,77,M,sputum,infection,93,190,42,32,1.5,1.0,0.5,1,0,hospital-onset,none,alive,0
+MRSA_0035,2025-02-11,2025-02-13,OMU Hospital,Internal,P009,30,F,wound,colonization,88,12,7,16,1.0,1.0,2.0,0,0,hospital-onset,none,alive,0
+MRSA_0036,2025-09-05,2025-09-07,OMU Hospital,Surgery,P011,56,M,sputum,colonization,93,190,42,32,1.0,1.0,0.5,0,0,hospital-onset,none,alive,1
+MRSA_0037,2025-05-03,2025-05-04,OMU Hospital,ER,P002,46,F,sputum,colonization,12,34,56,32,1.0,2.0,0.25,0,0,hospital-onset,none,alive,1
+MRSA_0038,2025-02-17,2025-02-20,OMU Hospital,Surgery,P029,94,F,catheter,colonization,93,190,42,32,2.0,1.0,0.25,1,0,community-onset,none,alive,0
+MRSA_0039,2025-08-18,2025-08-23,OMU Hospital,ICU,P034,98,M,catheter,colonization,155,66,101,64,1.5,0.5,0.25,0,0,hospital-onset,ETT,alive,0
+MRSA_0040,2025-06-05,2025-06-06,City General,Internal,P028,62,M,blood,infection,88,12,7,64,0.5,1.0,2.0,0,0,unknown,none,alive,0
+MRSA_0041,2025-09-01,2025-09-04,OMU Hospital,Internal,P027,83,F,blood,infection,88,12,7,8,1.0,2.0,0.5,0,0,community-onset,CVC,alive,0
+MRSA_0042,2025-07-05,2025-07-08,Nagasaki Univ Hosp,ICU,P033,64,M,sputum,colonization,106,77,113,8,1.0,1.0,0.25,1,1,hospital-onset,urinary,dead,0
+MRSA_0043,2025-08-02,2025-08-03,City General,ICU,P026,78,M,sputum,colonization,155,66,101,32,1.0,1.0,0.5,0,0,hospital-onset,none,alive,0
+MRSA_0044,2025-06-18,2025-06-19,OMU Hospital,Internal,P030,54,M,sputum,colonization,88,12,7,4,0.5,0.5,0.5,1,1,community-onset,Dialysis,unknown,0
+MRSA_0045,2025-07-14,2025-07-17,OMU Hospital,ER,P028,37,M,blood,infection,93,190,42,16,1.5,1.0,0.5,0,0,hospital-onset,urinary,alive,0
+MRSA_0046,2025-01-21,2025-01-25,OMU Hospital,Internal,P004,35,F,sputum,infection,93,190,42,64,0.5,1.0,0.5,1,1,hospital-onset,none,alive,0
+MRSA_0047,2025-02-03,2025-02-05,OMU Hospital,Surgery,P030,74,F,urine,colonization,93,190,42,4,1.5,1.0,1.0,1,1,community-onset,none,alive,0
+MRSA_0048,2025-08-24,2025-08-25,OMU Hospital,ER,P013,98,F,urine,infection,12,34,56,16,1.0,1.0,0.25,0,0,hospital-onset,none,alive,0
+MRSA_0049,2025-02-19,2025-02-21,OMU Hospital,LTC,P012,72,M,blood,infection,71,71,71,4,1.5,0.5,0.5,0,0,community-onset,none,alive,0
+MRSA_0050,2025-04-12,2025-04-15,OMU Hospital,ICU,P019,58,M,sputum,infection,106,77,113,4,1.0,2.0,0.25,0,0,unknown,CVC,alive,0
+MRSA_0051,2025-07-11,2025-07-12,OMU Hospital,Surgery,P013,98,M,catheter,infection,93,190,42,4,1.0,1.0,0.5,0,0,community-onset,none,alive,0
+MRSA_0052,2025-01-23,2025-01-26,OMU Hospital,Surgery,P042,72,M,urine,colonization,93,190,42,4,1.0,1.0,0.5,0,0,hospital-onset,none,alive,0
+MRSA_0053,2025-10-09,2025-10-12,OMU Hospital,Internal,P026,69,F,wound,infection,93,190,42,64,1.5,1.0,0.25,1,0,hospital-onset,Dialysis,alive,0
+MRSA_0054,2025-07-27,2025-07-29,OMU Hospital,ICU,P028,72,M,urine,infection,88,12,7,4,0.5,0.5,1.0,0,0,community-onset,CVC,alive,0
+MRSA_0055,2025-09-16,2025-09-21,OMU Hospital,Surgery,P011,65,M,blood,infection,93,190,42,8,1.5,0.5,1.0,0,0,community-onset,Dialysis,alive,0
+MRSA_0056,2025-07-18,2025-07-23,OMU Hospital,Internal,P011,62,M,wound,infection,93,190,42,4,1.0,1.0,0.5,0,0,hospital-onset,CVC,alive,0
+MRSA_0057,2025-04-09,2025-04-10,OMU Hospital,Internal,P003,42,F,blood,infection,93,190,42,32,1.0,0.5,0.5,0,0,hospital-onset,CVC,alive,0
+MRSA_0058,2025-01-12,2025-01-12,OMU Hospital,LTC,P029,77,F,urine,colonization,210,5,9,16,0.5,1.0,0.5,0,0,hospital-onset,none,alive,0
+MRSA_0059,2025-06-10,2025-06-15,Nagasaki Univ Hosp,Internal,P033,66,F,wound,colonization,88,12,7,4,1.0,2.0,0.5,1,0,hospital-onset,none,alive,0
+MRSA_0060,2025-04-24,2025-04-25,OMU Hospital,Surgery,P011,89,F,catheter,infection,88,12,7,32,1.0,0.5,0.5,0,0,community-onset,none,alive,0
+MRSA_0061,2025-07-26,2025-07-31,OMU Hospital,LTC,P025,61,M,urine,infection,210,5,9,32,1.0,1.0,1.0,0,0,community-onset,none,unknown,1
+MRSA_0062,2025-07-21,2025-07-23,Nagasaki Univ Hosp,Surgery,P024,33,M,sputum,colonization,93,190,42,4,1.0,1.0,0.5,1,0,hospital-onset,none,dead,1
+MRSA_0063,2025-01-01,2025-01-02,Nagasaki Univ Hosp,Surgery,P041,66,F,wound,infection,93,190,42,4,0.5,0.5,0.5,0,0,hospital-onset,CVC,alive,0
+MRSA_0064,2025-07-31,2025-07-31,OMU Hospital,Internal,P040,98,F,blood,infection,88,12,7,4,1.0,1.0,1.0,0,0,community-onset,ETT,alive,0
+MRSA_0065,2025-01-29,2025-01-29,Nagasaki Univ Hosp,Internal,P042,61,F,wound,infection,88,12,7,4,1.0,1.0,0.5,0,0,hospital-onset,none,alive,0
+MRSA_0066,2025-10-10,2025-10-13,Nagasaki Univ Hosp,ICU,P034,51,F,urine,infection,88,12,7,32,1.5,0.5,1.0,1,1,hospital-onset,none,alive,0
+MRSA_0067,2025-03-31,2025-04-01,OMU Hospital,ICU,P003,46,M,sputum,colonization,106,77,113,16,1.0,1.0,0.5,1,0,community-onset,urinary,alive,1
+MRSA_0068,2025-02-13,2025-02-16,City General,ICU,P016,49,M,catheter,colonization,88,12,7,8,1.0,1.0,1.0,1,0,hospital-onset,urinary,alive,0
+MRSA_0069,2025-09-29,2025-09-29,Nagasaki Univ Hosp,ER,P015,62,F,urine,infection,12,34,56,4,0.5,0.5,1.0,0,0,hospital-onset,CVC,alive,0
+MRSA_0070,2025-01-16,2025-01-17,OMU Hospital,Internal,P045,46,M,urine,infection,93,190,42,64,1.5,0.5,1.0,1,0,hospital-onset,none,alive,1
+MRSA_0071,2025-04-15,2025-04-15,OMU Hospital,ICU,P041,94,M,urine,infection,155,66,101,8,1.0,0.5,0.5,0,0,hospital-onset,none,unknown,0
+MRSA_0072,2025-07-08,2025-07-10,City General,ER,P031,62,F,wound,infection,12,34,56,16,1.0,0.5,0.5,1,0,hospital-onset,none,alive,1
+MRSA_0073,2025-03-29,2025-04-03,OMU Hospital,Internal,P004,69,M,sputum,infection,88,12,7,64,1.0,1.0,0.5,1,1,community-onset,urinary,alive,1
+MRSA_0074,2025-04-29,2025-05-01,OMU Hospital,ICU,P006,93,F,urine,infection,106,77,113,32,2.0,1.0,1.0,0,0,community-onset,CVC,alive,0
+MRSA_0075,2025-04-16,2025-04-21,OMU Hospital,Surgery,P011,95,F,catheter,infection,93,190,42,64,1.0,0.5,0.5,0,0,unknown,none,dead,0
+MRSA_0076,2025-10-11,2025-10-15,Nagasaki Univ Hosp,ICU,P017,64,M,blood,infection,88,12,7,16,1.5,1.0,0.5,1,0,community-onset,none,alive,0
+MRSA_0077,2025-09-25,2025-09-28,OMU Hospital,Surgery,P017,73,M,blood,infection,71,71,71,16,1.5,1.0,0.25,1,1,hospital-onset,none,alive,0
+MRSA_0078,2025-08-26,2025-08-27,OMU Hospital,Surgery,P045,81,M,wound,infection,88,12,7,32,0.5,0.5,1.0,1,1,hospital-onset,none,alive,0
+MRSA_0079,2025-10-26,2025-10-27,City General,Internal,P030,64,F,sputum,infection,93,190,42,8,1.0,1.0,0.5,1,1,hospital-onset,none,alive,1
+MRSA_0080,2025-06-17,2025-06-19,Nagasaki Univ Hosp,Surgery,P007,35,M,sputum,infection,93,190,42,16,1.0,1.0,0.5,1,1,community-onset,Dialysis,alive,0
+MRSA_0081,2025-09-25,2025-09-30,OMU Hospital,Internal,P044,79,M,sputum,colonization,88,12,7,4,1.0,0.5,0.25,0,0,hospital-onset,Dialysis,dead,0
+MRSA_0082,2025-06-30,2025-07-01,OMU Hospital,ICU,P026,84,M,catheter,colonization,88,12,7,4,1.5,1.0,0.5,0,0,hospital-onset,none,alive,1
+MRSA_0083,2025-06-30,2025-06-30,Nagasaki Univ Hosp,ER,P027,75,F,catheter,colonization,93,190,42,8,1.0,0.5,0.5,0,0,hospital-onset,ETT,alive,0
+MRSA_0084,2025-05-24,2025-05-29,OMU Hospital,Internal,P032,51,F,wound,infection,88,12,7,32,0.5,1.0,1.0,1,1,community-onset,none,dead,0
+MRSA_0085,2025-10-26,2025-10-31,OMU Hospital,ICU,P042,64,F,sputum,infection,71,71,71,16,1.5,0.5,0.5,0,0,hospital-onset,none,alive,1
+MRSA_0086,2025-02-16,2025-02-16,Nagasaki Univ Hosp,ER,P020,57,M,wound,infection,93,190,42,4,1.0,0.5,0.5,0,0,hospital-onset,urinary,alive,0
+MRSA_0087,2025-09-05,2025-09-10,OMU Hospital,ICU,P032,62,M,wound,colonization,155,66,101,64,1.0,0.5,0.5,0,0,hospital-onset,urinary,unknown,0
+MRSA_0088,2025-02-08,2025-02-08,OMU Hospital,Surgery,P002,91,M,urine,colonization,88,12,7,32,1.5,0.5,0.5,0,0,hospital-onset,Dialysis,alive,0
+MRSA_0089,2025-07-07,2025-07-12,OMU Hospital,ER,P014,95,F,wound,infection,12,34,56,32,1.0,1.0,0.5,0,0,hospital-onset,urinary,unknown,0
+MRSA_0090,2025-09-10,2025-09-13,Nagasaki Univ Hosp,Surgery,P020,80,M,wound,infection,93,190,42,32,1.0,0.5,0.5,0,0,community-onset,none,alive,1
+MRSA_0091,2025-01-31,2025-02-05,Nagasaki Univ Hosp,LTC,P040,77,M,wound,infection,210,5,9,32,1.0,0.5,0.5,1,1,hospital-onset,ETT,alive,0
+MRSA_0092,2025-01-07,2025-01-10,OMU Hospital,ER,P036,80,F,urine,infection,93,190,42,64,2.0,0.5,0.5,0,0,hospital-onset,none,alive,0
+MRSA_0093,2025-10-22,2025-10-22,Nagasaki Univ Hosp,Surgery,P044,67,F,wound,colonization,93,190,42,64,1.0,1.0,0.5,0,0,community-onset,none,alive,1
+MRSA_0094,2025-01-05,2025-01-07,Nagasaki Univ Hosp,ICU,P006,66,M,urine,infection,71,71,71,8,2.0,0.5,1.0,1,1,hospital-onset,ETT,alive,0
+MRSA_0095,2025-10-13,2025-10-15,Nagasaki Univ Hosp,Internal,P017,55,M,urine,infection,71,71,71,4,1.0,0.5,0.5,1,0,hospital-onset,ETT,alive,1
+MRSA_0096,2025-07-08,2025-07-08,City General,Internal,P011,66,M,catheter,infection,88,12,7,32,1.0,1.0,1.0,1,1,unknown,none,alive,1
+MRSA_0097,2025-06-20,2025-06-24,City General,Internal,P010,98,F,wound,colonization,88,12,7,8,1.5,0.5,0.25,0,0,hospital-onset,none,alive,0
+MRSA_0098,2025-01-22,2025-01-27,OMU Hospital,ICU,P037,83,M,sputum,colonization,71,71,71,16,1.0,1.0,0.5,0,0,community-onset,ETT,alive,1
+MRSA_0099,2025-04-30,2025-05-03,OMU Hospital,ICU,P014,61,F,wound,infection,106,77,113,16,1.5,0.5,0.5,1,0,hospital-onset,CVC,alive,0
+MRSA_0100,2025-09-17,2025-09-17,OMU Hospital,ICU,P012,59,F,sputum,infection,155,66,101,4,2.0,1.0,1.0,0,0,hospital-onset,CVC,alive,0

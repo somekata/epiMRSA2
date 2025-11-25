@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MRSA POT Explorer - Instruction</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .doc h2 {
+        margin-top: 18px;
+      }
+      .doc code {
+        background: #0a1130;
+        padding: 2px 6px;
+        border-radius: 6px;
+      }
+      .doc pre {
+        background: #0a1130;
+        border: 1px solid #243064;
+        padding: 10px;
+        border-radius: 10px;
+        overflow: auto;
+      }
+      .doc a {
+        color: var(--accent);
+      }
+      .doc .toc a {
+        display: block;
+        margin: 4px 0;
+      }
+      .badge {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 999px;
+        font-size: 11px;
+        border: 1px solid #2a3468;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <h1>MRSA POT Explorer - Instruction</h1>
+        <p class="subtitle">使い方・解析の見方・Signalと類似POTの原理</p>
+      </div>
+      <nav class="tabs">
+        <a class="tab active" href="index.html">← アプリに戻る</a>
+      </nav>
+    </header>
+
+    <main class="container doc">
+      <section class="card">
+        <h2>目次</h2>
+        <div class="toc">
+          <a href="#start">1. すぐ使う</a>
+          <a href="#csv">2. CSV仕様</a>
+          <a href="#tabs">3. 各タブの機能</a>
+          <a href="#signals">4. Signalの検出原理</a>
+          <a href="#similar">5. 類似POTの仕組み</a>
+          <a href="#qa">6. よくある質問</a>
+        </div>
+      </section>
+
+      <section class="card" id="start">
+        <h2>1. すぐ使う</h2>
+        <ol>
+          <li>左上「CSV読み込み」からファイルを選択</li>
+          <li>
+            または「サンプルCSVを読む」 →
+            <code>data/mrsa_sample_100records.csv</code>
+          </li>
+          <li>期間/病棟/施設フィルタを設定し「解析を更新」</li>
+          <li>Overview → Trend → Profile → Signals の順で見ると理解しやすい</li>
+        </ol>
+      </section>
+
+      <section class="card" id="csv">
+        <h2>2. CSV仕様</h2>
+        <h3>2.1 必須列</h3>
+
+        <pre>
+collection_date, ward, hospital, specimen, POT1, POT2, POT3
+2025-01-14, ICU, OMU, blood, 106, 77, 113
+</pre
+        >
+
+        <h3>2.2 任意列（入っていれば活用）</h3>
+        <ul>
+          <li>onset_type</li>
+          <li>patient_id</li>
+          <li>clindamycin_R（0/1）</li>
+          <li>vancomycin_MIC, daptomycin_MIC</li>
+        </ul>
+
+        <h3>2.3 欠損の扱い</h3>
+        <ul>
+          <li>ward/hospital/specimen 欠損 → "unknown"</li>
+          <li>collection_date 欠損 → 時系列解析から除外</li>
+        </ul>
+      </section>
+
+      <section class="card" id="tabs">
+        <h2>3. 各タブの機能</h2>
+
+        <h3>Upload / Settings</h3>
+        <p>CSV読み込みとフィルタ設定（全タブ共通）</p>
+
+        <h3>Overview</h3>
+        <ul>
+          <li>分離数・ユニークPOT</li>
+          <li>病棟別棒グラフ</li>
+          <li>検体Pie</li>
+          <li>月別総件数</li>
+        </ul>
+
+        <h3>POT Trend</h3>
+        <p>上位5 POTの月別推移を折れ線で表示。</p>
+
+        <h3>POT Profile</h3>
+        <ul>
+          <li>POT×病棟ヒートマップ</li>
+          <li>POTカード（Ward/Specimen/Onsetの最多カテゴリ）</li>
+          <li>耐性率・MIC分布</li>
+          <li>自動ラベル：ICU侵襲型、市中救急型など</li>
+          <li>類似POT（cosine距離）</li>
+        </ul>
+
+        <h3>Signals</h3>
+        <p>
+          POT × 病棟ごとに、短期間での集積（k件以上）を
+          sliding-window方式で検出。
+        </p>
+
+        <h3>Raw Table</h3>
+        <p>POT / 病棟 / 検体 / patient_id で検索可能。</p>
+      </section>
+
+      <section class="card" id="signals">
+        <h2>4. Signal（アウトブレイク芽）の原理</h2>
+        <ol>
+          <li>POT × 病棟ごとに分離日でソート</li>
+          <li>右端を増やしつつ、左端が窓幅を超えたら進める</li>
+          <li>窓内件数が閾値に達したら signal として登録</li>
+        </ol>
+
+        <p class="mini">※ 伝播の“動線”はタイムラインの重なりで把握。</p>
+      </section>
+
+      <section class="card" id="similar">
+        <h2>5. 類似POTの仕組み</h2>
+        <p>POTごとに以下の情報をベクトル化：</p>
+        <ul>
+          <li>Ward 分布</li>
+          <li>Specimen 分布</li>
+          <li>onset_type 分布</li>
+          <li>CLDM-R率、VCM≥2、DAP≥1</li>
+        </ul>
+        <p>cosine similarity &gt; 0.65 を「類似POT」と表示。</p>
+      </section>
+
+      <section class="card" id="qa">
+        <h2>6. よくある質問</h2>
+        <ul>
+          <li>POT番号の意味付け → Profileタブの自動ラベルを参照</li>
+          <li>Signalが出ない → 窓幅を広げる / 閾値を下げる</li>
+          <li>Signalが多すぎる → 先に病棟・期間を絞る</li>
+          <li>日付形式は？ → yyyy-mm-dd 推奨（JSで自動判定）</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      MRSA POT Explorer (Tabbed) v0.2<br />
+      <small>※ 本ツールは ChatGPT を活用して作成されました。</small>
+    </footer>
+  </body>
+</html>
